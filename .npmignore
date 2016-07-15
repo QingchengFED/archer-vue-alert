@@ -1,0 +1,9 @@
+.DS_Store
+node_modules
+coverage
+.idea
+.jshintrc
+npm-debug.log
+/src/
+/examples/
+webpack.config.js
