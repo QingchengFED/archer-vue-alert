@@ -1,6 +1,6 @@
 {
   "name": "archer-vue-alert",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A vue alert component for qingcheng mobile projects.",
   "main": "dist/index.js",
   "scripts": {
