@@ -1,20 +1,22 @@
 /**
- * Created by wangxiaottt on 16/7/13.
+ * Created by wangxiaottt on 16/7/16.
  */
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+    entry: './src/index.js',
+    output: {
+        path: './dist',
+        filename: 'index.js',
+        libraryTarget: 'umd',
+        umdNamedDefine: true
+    },
     module: {
         loaders: [
             {test: /\.vue$/, loader: 'vue'},
             {test: /\.js$/, exclude: /node_modules/, loader: 'babel'},
             {test: /\.html$/, loader: 'html'}
         ]
-    },
-    entry: './src/index.js',
-    output: {
-        path: './dist',
-        filename: 'index.js'
     },
     babel: {
         presets: ['es2015'],
