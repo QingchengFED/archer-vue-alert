@@ -22,6 +22,7 @@ function alert(Vue) {
                     methods: {
                         confirm (){
                             alertInstance.$remove()
+                            alertInstance = null
                         }
                     }
                 });
