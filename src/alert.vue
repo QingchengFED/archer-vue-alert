@@ -7,7 +7,7 @@
                 </div>
                 <div class="alert-ctnWrap" v-show="message">
                     <p class="ctn f-bw">
-                        {{message}}
+                        {{{message}}}
                     </p>
                 </div>
             </div>

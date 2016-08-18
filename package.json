@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "webpack --progress --hide-modules --config build/webpack.prod.config.js",
+    "dev": "webpack-dev-server --progesss --hide-modules --config build/webpack.dev.config.js",
     "prepublish": "npm run build"
   },
   "dependencies": {
