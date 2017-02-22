@@ -3,7 +3,7 @@
  */
 import alert from '../dist/index'
 
-Vue.use(alert)
+Vue.use(alert, {confirmTxt: "好的"});
 
 new Vue({
     el: 'body',

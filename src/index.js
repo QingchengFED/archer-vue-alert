@@ -1,5 +1,5 @@
 
-function alert(Vue) {
+function alert(Vue, options={}) {
 
     var AlertConstructor = Vue.extend(require('./alert.vue'));
     var alertInstance = null;
@@ -16,7 +16,7 @@ function alert(Vue) {
                         return {
                             title: config.title,
                             message: config.message,
-                            confirmTxt: config.confirmTxt || 'OK'
+                            confirmTxt: config.confirmTxt || options.confirmTxt || 'OK'
                         };
                     },
                     methods: {
@@ -32,10 +32,6 @@ function alert(Vue) {
 
     });
 
-}
-
-if (typeof window !== 'undefined' && window.Vue) {
-    Vue.use(alert);
 }
 
 module.exports = alert;

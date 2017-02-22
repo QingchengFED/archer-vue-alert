@@ -9,19 +9,19 @@
 
 ```JavaScript
 var VueAlert = require('archer-vue-alert');
-Vue.use(VueAlert);
+Vue.use(VueAlert, [options]); // global options and only confirmTxt supported
 ```
 
 ### Basic use:
 
 ```JavaScript
-/* 
+/*
 * @usage
 * vm.$alert(options)
-* 
+*
 * @warn
 * options.message support raw_html
-* it can easily lead to XSS attacks. 
+* it can easily lead to XSS attacks.
 * only use it on trusted content
 * on user-provided content
 */
