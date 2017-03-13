@@ -30,9 +30,12 @@ vm.$alert({
     title: 'alertTitle',
     message: 'alertMessage', //message accepts string and raw_html
     confirmTxt: 'confirm btn txt' //default is 'OK'
-});
+}).then(function(){
+
+})
 ```
 
 ### Changelog
-v1.0.4 support global options setting(support vue 1.0)
-v2.0.0 support vue 2.0+
+* v1.0.4 support global options setting(support vue 1.0)
+* v2.0.0 support vue 2.0+
+* v2.0.1 fix bug,support promise

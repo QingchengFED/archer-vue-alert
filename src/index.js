@@ -3,6 +3,7 @@ function alert(Vue, options={}) {
 
     var AlertConstructor = Vue.extend(require('./alert.vue'));
     var alertInstance = null;
+    var _deferred = null;
 
     Object.defineProperty(Vue.prototype, '$alert', {
 
@@ -10,23 +11,31 @@ function alert(Vue, options={}) {
 
             return (config) => {
                 if (alertInstance) return;
-                alertInstance = new AlertConstructor({
-                    el: document.createElement('div'),
-                    data() {
-                        return {
-                            title: config.title,
-                            message: config.message,
-                            confirmTxt: config.confirmTxt || options.confirmTxt || 'OK'
-                        };
-                    },
-                    methods: {
-                        confirm (){
-                            alertInstance.$remove();
-                            alertInstance = null
+
+                _deferred = new Promise(function (resolve, reject) {
+                    alertInstance = new AlertConstructor({
+                        el: document.createElement('div'),
+                        data() {
+                            return {
+                                title: config.title,
+                                message: config.message,
+                                confirmTxt: config.confirmTxt || options.confirmTxt || 'OK'
+                            };
+                        },
+                        methods: {
+                            confirm (){
+                                alertInstance.$el.remove();
+                                alertInstance = null;
+                                resolve({data: 'confirm'})
+                            }
                         }
-                    }
+                    });
+
+                    document.body.appendChild(alertInstance.$el);
                 });
-                alertInstance.$appendTo(document.body);
+
+
+                return _deferred
             };
         }
 

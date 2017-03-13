@@ -6,7 +6,7 @@ import alert from '../dist/index'
 Vue.use(alert, {confirmTxt: "好的"});
 
 new Vue({
-    el: 'body',
+    el: '#app',
     data () {
         return {}
     },
@@ -18,7 +18,11 @@ new Vue({
             this.$alert({title: 'Title', message: 'this is message'})
         },
         showRawHtmlAlert () {
-            this.$alert({title: 'raw Html', message: 'please click, <a href="tel: 1122112222">1122112222</a>'})
+            var _self = this;
+
+            this.$alert({title: 'raw Html', message: 'please click, <a href="tel: 1122112222">1122112222</a>'}).then(function(event){
+                alert('promise resolve');
+            })
         }
     }
 })
