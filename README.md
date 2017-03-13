@@ -32,3 +32,7 @@ vm.$alert({
     confirmTxt: 'confirm btn txt' //default is 'OK'
 });
 ```
+
+### Changelog
+v1.0.4 support global options setting(support vue 1.0)
+v2.0.0 support vue 2.0+

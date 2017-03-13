@@ -6,9 +6,7 @@
                     <h3 class="title f-bw">{{title}}</h3>
                 </div>
                 <div class="alert-ctnWrap" v-show="message">
-                    <p class="ctn f-bw">
-                        {{{message}}}
-                    </p>
+                    <p class="ctn f-bw" v-html="message"></p>
                 </div>
             </div>
             <div class="alert-btnWrap retainbt">
