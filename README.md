@@ -39,3 +39,4 @@ vm.$alert({
 * v1.0.4 support global options setting(support vue 1.0)
 * v2.0.0 support vue 2.0+
 * v2.0.1 fix bug,support promise
+* v2.0.2 fix not work in vue 1.*
